@@ -1,0 +1,39 @@
+[project]
+name = "project-physical-ai-partner"
+version = "0.1.0"
+description = "A local-first AI partner for long-term engineering, robotics, and research projects."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.31.0",
+    "pre-commit>=4.0.0",
+    "pytest>=8.0.0",
+    "ruff>=0.12.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.basedpyright]
+pythonVersion = "3.12"
+typeCheckingMode = "standard"
+include = ["services", "shared", "tests"]
+exclude = [".venv"]
