@@ -1,0 +1,14 @@
+[project]
+name = "physical-ai-partner-shared"
+version = "0.1.0"
+description = "Shared contracts and libraries for Project Physical AI Partner."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shared"]
