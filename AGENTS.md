@@ -379,6 +379,13 @@ Prefer:
 - Clear commit messages
 - One logical change per commit
 
+## Issue and Pull Request Workflow
+
+- Create a dedicated branch for each GitHub Issue before starting implementation.
+- Open a Pull Request for the branch; do not merge implementation changes directly into `main`.
+- Include `Closes #<issue-number>` in the Pull Request body so that GitHub closes the completed Issue automatically when the Pull Request is merged.
+- Keep the Pull Request scoped to the Issue it closes.
+
 Do not mix:
 
 - Refactoring
