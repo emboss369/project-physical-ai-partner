@@ -26,3 +26,22 @@ project-physical-ai-partner/
 - [API contracts](docs/api/)
 - [Detailed design](docs/design/)
 - [AI development workflow](docs/ai-development-workflow.md)
+
+## Development
+
+This repository uses Python 3.12 and [uv](https://docs.astral.sh/uv/) for dependency and virtual-environment management.
+
+```bash
+uv sync
+uv run ruff check .
+uv run ruff format --check .
+uv run basedpyright
+uv run pytest
+uv run pre-commit install
+```
+
+After installing the hooks, `pre-commit` runs Ruff, basedpyright, and Pytest before each commit. To run every hook manually, use:
+
+```bash
+uv run pre-commit run --all-files
+```
