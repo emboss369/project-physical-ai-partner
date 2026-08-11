@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Shared contracts and libraries for Project Physical AI Partner."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = ["structlog>=25.0.0"]
 
 [build-system]
 requires = ["hatchling>=1.25.0"]
