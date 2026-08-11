@@ -31,14 +31,31 @@ project-physical-ai-partner/
 
 This repository uses Python 3.12 and [uv](https://docs.astral.sh/uv/) for dependency and virtual-environment management.
 
+### Toolchain
+
+- Ruff: linting and import sorting
+- Ruff Format: formatting
+- basedpyright: static type checking
+- Pytest: automated testing
+- pre-commit: local quality gates before commit
+
+### Setup
+
 ```bash
-uv sync
+uv sync --group dev
+uv run pre-commit install
+```
+
+### Quality checks
+
+```bash
 uv run ruff check .
 uv run ruff format --check .
 uv run basedpyright
 uv run pytest
-uv run pre-commit install
 ```
+
+### Pre-commit
 
 After installing the hooks, `pre-commit` runs Ruff, basedpyright, and Pytest before each commit. To run every hook manually, use:
 
