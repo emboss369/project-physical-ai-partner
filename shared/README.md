@@ -54,3 +54,20 @@ bind_context(correlation_id="request-123")
 ```
 
 機密情報、音声データ、会話全文をログへ出力してはなりません。詳細は ADR-0005 を参照してください。
+
+## Configuration
+
+サービス固有の設定は `BaseServiceSettings` を継承して定義します。サービスコードで `os.environ` を直接参照してはなりません。
+
+```python
+from shared.config import BaseServiceSettings, service_settings_config
+
+
+class LlmSettings(BaseServiceSettings):
+    model_config = service_settings_config(env_prefix="LLM_")
+
+    model_name: str
+    max_tokens: int = 512
+```
+
+環境変数にはサービス固有の接頭辞を付け、ネストした値は `__` で表現します。例: `LLM_MODEL__MAX_TOKENS=1024`。`.env` はローカル開発用であり、Git管理してはなりません。
