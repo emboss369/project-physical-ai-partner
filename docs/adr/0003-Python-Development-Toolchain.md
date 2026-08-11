@@ -119,6 +119,17 @@ Project Physical AI Partner は Python を主要開発言語として採用す�
 * テストは Pytest を使用する
 * Git Hooks は pre-commit を利用する
 
+具体的な実行手順は以下のとおりである。
+
+```bash
+uv sync --group dev
+uv run pre-commit install
+uv run ruff check .
+uv run ruff format --check .
+uv run basedpyright
+uv run pytest
+```
+
 サービス固有の設定は、プロジェクト標準を変更しない範囲で追加できる。
 
 ---
