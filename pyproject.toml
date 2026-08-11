@@ -44,3 +44,5 @@ typeCheckingMode = "standard"
 include = ["services", "shared", "tests"]
 exclude = [".venv"]
 extraPaths = ["shared/src"]
+venvPath = "."
+venv = ".venv"
