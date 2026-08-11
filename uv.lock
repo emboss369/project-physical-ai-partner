@@ -2,6 +2,12 @@ version = 1
 revision = 3
 requires-python = "==3.12.*"
 
+[manifest]
+members = [
+    "physical-ai-partner-shared",
+    "project-physical-ai-partner",
+]
+
 [[package]]
 name = "basedpyright"
 version = "1.39.9"
@@ -103,6 +109,11 @@ wheels = [
 ]
 
 [[package]]
+name = "physical-ai-partner-shared"
+version = "0.1.0"
+source = { editable = "shared" }
+
+[[package]]
 name = "platformdirs"
 version = "4.11.2"
 source = { registry = "https://pypi.org/simple" }
@@ -140,6 +151,9 @@ wheels = [
 name = "project-physical-ai-partner"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "physical-ai-partner-shared" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -150,6 +164,7 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [{ name = "physical-ai-partner-shared", editable = "shared" }]
 
 [package.metadata.requires-dev]
 dev = [

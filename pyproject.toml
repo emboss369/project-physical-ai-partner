@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A local-first AI partner for long-term engineering, robotics, and research projects."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = ["physical-ai-partner-shared"]
 
 [dependency-groups]
 dev = [
@@ -16,6 +16,12 @@ dev = [
 
 [tool.uv]
 package = false
+
+[tool.uv.sources]
+physical-ai-partner-shared = { workspace = true }
+
+[tool.uv.workspace]
+members = ["shared"]
 
 [tool.ruff]
 target-version = "py312"
@@ -30,10 +36,11 @@ indent-style = "space"
 line-ending = "auto"
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "shared/tests"]
 
 [tool.basedpyright]
 pythonVersion = "3.12"
 typeCheckingMode = "standard"
 include = ["services", "shared", "tests"]
 exclude = [".venv"]
+extraPaths = ["shared/src"]
