@@ -55,6 +55,10 @@ uv run basedpyright
 uv run pytest
 ```
 
+### Continuous integration
+
+A GitHub Actions workflow is included at `.github/workflows/ci.yml`. It runs on pull requests and pushes to `main`, and executes the same commands used for local development.
+
 ### Pre-commit
 
 After installing the hooks, `pre-commit` runs Ruff, basedpyright, and Pytest before each commit. To run every hook manually, use:
