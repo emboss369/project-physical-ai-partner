@@ -38,6 +38,8 @@ This repository uses Python 3.12 and [uv](https://docs.astral.sh/uv/) for depend
 - basedpyright: static type checking
 - Pytest: automated testing
 - pre-commit: local quality gates before commit
+- Configuration stored in pyproject.toml and enforced by CI / pre-commit hooks
+- Editor settings stored in .editorconfig to keep whitespace and encoding consistent
 
 ### Setup
 
